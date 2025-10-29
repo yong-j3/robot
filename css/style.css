@@ -514,9 +514,13 @@ footer a:hover { color: #00c896; }
   .nav-list { 
      flex-direction: row;
      justify-content: center;
+     flex-wrap: nowrap;
      gap: 15px;
      font-size: 0.5rem;
   }
+   .nav-list li {
+      flex: 0 0 auto;
+   }
   .nav-list a { 
      padding: 5px 8px;
   }
@@ -639,4 +643,5 @@ footer a:hover { color: #00c896; }
      flex: 1 1 25%;
   }
 }
+
 
