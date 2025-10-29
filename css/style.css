@@ -1,6 +1,6 @@
-/* --------------------------------
+/* ==============================
    ベース設定
--------------------------------- */
+============================== */
 body {
   font-family: 'Source Sans Pro', sans-serif;
   color: #ffffff;
@@ -30,9 +30,9 @@ p {
   margin-bottom: 1em;
 }
 
-/* --------------------------------
+/* ==============================
    ヘッダー（ナビゲーション）
--------------------------------- */
+============================== */
 .header {
   position: fixed;
   top: 0;
@@ -66,9 +66,9 @@ p {
   color: #00c896;
 }
 
-/* --------------------------------
+/* ==============================
    ヒーローセクション
--------------------------------- */
+============================== */
 .hero {
   position: relative;
   height: 100vh;
@@ -165,9 +165,9 @@ p {
   }
 }
 
-/* --------------------------------
+/* ==============================
    共通セクション設定
--------------------------------- */
+============================== */
 section {
   padding-top: 100px;
   margin: 0 auto;
@@ -175,9 +175,9 @@ section {
   text-align: center;
 }
 
-/* --------------------------------
+/* ==============================
    Services セクション
--------------------------------- */
+============================== */
 .services {
   background-color: #131523;
   padding: 80px 20px;
@@ -190,7 +190,6 @@ section {
   gap: 40px;
 }
 
-/* カード全体 */
 .service {
   position: relative;
   overflow: visible;
@@ -200,6 +199,7 @@ section {
   text-align: center;
   width: calc(50% - 20px);
   margin-top: 70px;
+  transition: background-color 0.3s;
 }
 
 .service-image-wrapper {
@@ -210,7 +210,7 @@ section {
 }
 
 .service-illustration {
-  max-width: 100%;
+  max-width: 240px;
   height: 100%;
   object-fit: contain;
   transition: transform 0.4s ease;
@@ -221,37 +221,30 @@ section {
   transform: scale(2.0);
 }
 
-/* Service カードのホバーカラーごとに個別定義 */
-.service.purple:hover {
-  background-color: rgba(180, 140, 255, 0.15); /* パステル紫 */
-}
+.service.purple:hover { background-color: rgba(180, 140, 255, 0.15); }
+.service.blue:hover   { background-color: rgba(130, 180, 255, 0.15); }
+.service.green:hover  { background-color: rgba(140, 255, 180, 0.15); }
+.service.red:hover    { background-color: rgba(255, 160, 160, 0.15); }
 
-.service.blue:hover {
-  background-color: rgba(130, 180, 255, 0.15); /* パステル青 */
-}
-
-.service.green:hover {
-  background-color: rgba(140, 255, 180, 0.15); /* パステル緑 */
-}
-
-.service.red:hover {
-  background-color: rgba(255, 160, 160, 0.15); /* パステル赤 */
-}
-
-.service-illustration {
-  max-width: 240px;
-  transition: transform 0.4s ease;
-}
-
-.service:hover .service-illustration {
-  transform: scale(2.0);
-}
-/* --------------------------------
+/* ==============================
    Projects セクション
--------------------------------- */
+============================== */
 .projects {
   padding: 80px 20px;
-  background-color: #0f111a;
+  background-color: #131523;
+  text-align: center;
+  position: relative;
+}
+
+.projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
 .project-list {
@@ -259,27 +252,74 @@ section {
   flex-direction: column;
   gap: 60px;
   align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .project img {
-  max-width: 100%;
+  width: 40%;
+  height: auto;
+  object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 1em;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.project:hover img {
+  transform: scale(1.25);
+  top: -50%;
 }
 
 .project h3 {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
 }
 
 .project p {
-  font-size: 1rem;
   color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
 }
 
-/* --------------------------------
+.project .btn {
+  display: inline-block;
+  background-color: #00f0ff;
+  color: #0f111a;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project .btn:hover { background-color: #00c896; }
+.project .btn:focus {
+  outline: 3px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+/* ==============================
    Contact セクション
--------------------------------- */
+============================== */
 .contact {
   padding: 120px 20px 60px;
   background-color: #1c1f2f;
@@ -319,15 +359,16 @@ section {
   background-color: #00c896;
 }
 
-/* OUR VISION セクション */
-/* OUR VISION セクション */
+/* ==============================
+   Vision セクション
+============================== */
 .vision-section {
   position: relative;
-  background-image: url("../img/vision-bg.jpg"); /* ← 好きな画像に変更 */
-  background-size: cover;  /* 背景画像がコンテナに合わせて伸縮 */
+  background-image: url("../img/vision-bg.jpg");
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding: 120px 20px 120px; /* 上部パディングを増やし、下部は少し余白を作成 */
+  padding: 120px 20px;
   color: #ffffff;
   text-align: center;
   z-index: 1;
@@ -340,7 +381,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* 黒い透過オーバーレイ */
+  background-color: rgba(0, 0, 0, 0.7);
   z-index: -1;
 }
 
@@ -352,62 +393,21 @@ section {
 }
 
 .vision-section .section-title {
-  font-size: 3.5rem;  /* タイトルをさらに大きく */
+  font-size: 3.5rem;
   margin-bottom: 1.2em;
   font-weight: 700;
 }
 
 .vision-section p {
-  font-size: 1.5rem;  /* 説明文のサイズも大きく */
+  font-size: 1.5rem;
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.inview {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease;
-}
-
-.inview.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --------------------------------
-   右下コーナーブロック（スクロールで出現）
--------------------------------- */
-#side-btn {
-  position: fixed;
-  bottom:270px;
-  right: -200px;
-  opacity: 0;
-  transform: rotate(-90deg);
-  transform-origin: top right;
-  transition: all 0.5s ease;
-  z-index: 9999;
-}
-
-#side-btn a {
-    width: 165px;
-    font-size: 0.875rem;
-    display: inline-block;
-    letter-spacing: 0.1rem;
-    padding: 15px 0;
-    color: #fff;
-    text-decoration: none;
-}
-
-#side-btn a:last-of-type {
-  border-left: solid 1px #fff;
-}
-
-#side-btn a:hover {
-    opacity: 0.7;
-}
-
-/* AIVYLの意味セクション */
+/* ==============================
+   AIVYL セクション
+============================== */
 .aivyl-meaning {
   padding: 60px 20px;
   display: flex;
@@ -422,9 +422,9 @@ section {
   max-width: 600px;
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transform: translateY(50px); /* 初期状態で下にずらしておく */
-  opacity: 0; /* 最初は透明に */
-  transition: opacity 0.8s ease, transform 0.8s ease; /* 透過と位置をアニメーションで変化 */
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .card h2 {
@@ -441,112 +441,43 @@ section {
 }
 
 .card.show {
-  opacity: 1; /* 表示時は不透明に */
-  transform: translateY(0); /* 上にスライドして表示 */
+  opacity: 1;
+  transform: translateY(0);
 }
 
-
-/* --------------------------------
-   Projects セクション（画像が上に大きくなるデザイン）
--------------------------------- */
-.projects {
-  padding: 80px 20px;
-  background-color: #131523; /* 背景色をダークなトーンに */
-  text-align: center;
-  position: relative;
+/* ==============================
+   右下コーナーブロック
+============================== */
+#side-btn {
+  position: fixed;
+  bottom: 270px;
+  right: -200px;
+  opacity: 0;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+  transition: all 0.5s ease;
+  z-index: 9999;
 }
 
-.projects::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.3); /* オーバーレイ */
-  z-index: -1;
-}
-
-.project-list {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* プロジェクトカード */
-.project {
-  background-color: rgba(255, 255, 255, 0.12);
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  max-width: 100%;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-  overflow: visible; /* 画像がカードからはみ出るようにする */
-  backdrop-filter: blur(10px); /* 背景をぼかす */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project:hover {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-/* 画像の設定 */
-.project img {
-  width: 40%; /* 画像を小さく表示 */
-  height: auto;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 20px;
-  position: relative;
-  top: 0; /* 初期状態で上に配置 */
-  transition: transform 0.4s ease-in-out;
-}
-
-/* ホバー時に画像が上に向かって2倍に拡大 */
-.project:hover img {
-  transform: scale(1.25); /* 画像を2倍に拡大 */
-  top: -50%; /* 画像を上に移動させて拡大 */
-}
-
-.project h3 {
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 15px;
-  font-weight: 700;
-}
-
-.project p {
-  color: #ccc;
-  font-size: 1rem;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-.project .btn {
+#side-btn a {
+  width: 165px;
+  font-size: 0.875rem;
   display: inline-block;
-  background-color: #00f0ff;
-  color: #0f111a;
-  padding: 12px 30px;
-  border-radius: 8px;
-  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 15px 0;
+  color: #fff;
   text-decoration: none;
-  transition: background-color 0.3s ease;
 }
 
-.project .btn:hover {
-  background-color: #00c896;
+#side-btn a:last-of-type {
+  border-left: solid 1px #fff;
 }
 
-.project .btn:focus {
-  outline: 3px solid #00f0ff;
-  box-shadow: 0 0 10px #00f0ff;
-}
+#side-btn a:hover { opacity: 0.7; }
 
+/* ==============================
+   Footer
+============================== */
 footer {
   background-color: #131523;
   color: #ffffff;
@@ -559,7 +490,6 @@ footer {
 
 footer p {
   margin: 0;
-  font-size: 1rem;
 }
 
 footer .credit {
@@ -574,239 +504,138 @@ footer a {
   transition: color 0.3s;
 }
 
-footer a:hover {
-  color: #00c896;
-}
+footer a:hover { color: #00c896; }
 
+/* ==============================
+   メディアクエリ
+============================== */
 /* モバイル（最大600px） */
 @media (max-width: 600px) {
-  header .nav-list {
-    flex-direction: column;
-    align-items: center;
+  .nav-list { 
+     flex-direction: row;
+     justify-content: center;
+     gap: 15px;
+     font-size: 0.85rem;
   }
-
-  header .nav-list li {
-    margin: 10px 0;
+  .nav-list a { 
+     padding: 5px 8px;
   }
-
-  .nav-list {
-    flex-direction: row;       /* 横並び */
-    justify-content: center;   /* 真ん中寄せ */
-    gap: 15px;                 /* リンク間の間隔 */
-    font-size: 0.85rem;        /* 少し小さめに */
-  }
-
-  .nav-list a {
-    padding: 5px 8px;
-  }
-
-  .hero .logo {
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-  }
-
-  .services h2 {
-    font-size: 2rem;
-  }
-
-  .service-items {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service {
-    flex: 1 1 100%;
-    margin-bottom: 30px;
-  }
-
-  .projects h2 {
-    font-size: 2rem;
-  }
-
-  .project {
-    max-width: 90%;
-    margin: 10px 0;
-  }
-
-  footer .credit {
-    font-size: 0.8rem;
-  }
-}
-
-/* ==============================
-   モバイル（最大600px）
-============================== */
-@media (max-width: 600px) {
-
-  /* ヒーロー */
   .hero-content {
-    margin: 120px auto 0;
-    padding: 15px;
+     margin: 120px auto 0;
+     padding: 15px;
   }
   .hero-content h1 {
-    font-size: 2.2rem;
+     font-size: 2.2rem;
   }
   .hero-content p {
-    font-size: 1.1rem;
+     font-size: 1.1rem;
   }
-
-  /* プロジェクトセクション */
-  .project-list {
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-  }
-  .project {
-    width: 95%;
-    max-width: 400px;
-    padding: 20px;
-    margin: 0 auto;
-  }
-  .project img {
-    width: 100%;
-    margin-bottom: 15px;
-  }
-  .project h3 {
-    font-size: 1.5rem;
-  }
-  .project p {
-    font-size: 1rem;
-  }
-
-  /* サービス・About・Vision・AIVYL・Contactも調整 */
   .service-items {
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
+     flex-direction: column;
+     align-items: center;
+     gap: 25px;
   }
   .service {
-    width: 95%;
-    padding: 20px;
+     width: 95%;
+     padding: 20px;
+     margin-bottom: 30px;
   }
   section {
-    padding: 60px 15px;
+     padding: 60px 15px;
   }
-  .skills {
-    flex-direction: column;
-    gap: 10px;
+  .project {
+     width: 95%;
+     max-width: 400px;
+     padding: 20px;
+  }
+  .project img {
+     width: 100%;
+     margin-bottom: 15px;
+  }
+  .project h3 {
+     font-size: 1.5rem
+     ;
+  }
+  .project p {
+     font-size: 1rem;
   }
   .vision-section .section-title {
-    font-size: 2.5rem;
+     font-size: 2.5rem;
   }
   .vision-section p {
-    font-size: 1.2rem;
+     font-size: 1.2rem;
   }
   .aivyl-meaning .card {
-    width: 95%;
-    padding: 20px;
-    margin: 0 auto;
+     width: 95%;
+     padding: 20px;
   }
   .contact {
-    width: 95%;
-    padding: 20px;
-    margin: 0 auto;
-  }
+     width: 95%;
+     padding: 20px; }
 }
 
-/* ==============================
-   タブレット（601px ～ 900px）
-============================== */
+/* タブレット（601px ～ 900px） */
 @media (min-width: 601px) and (max-width: 900px) {
-  /* ヘッダー */
-  .nav-list {
-    flex-wrap: wrap;
-    gap: 15px 25px;
-  }
-
-  /* ヒーロー */
   .hero-content {
-    margin: 180px auto 0;
-    padding: 20px;
+     margin: 180px auto 0;
+     padding: 20px;
   }
   .hero-content h1 {
-    font-size: 3.5rem;
+     font-size: 3.5rem;
   }
   .hero-content p {
-    font-size: 1.4rem;
+     font-size: 1.4rem;
   }
-
-  /* サービスセクション */
   .service-items {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 30px;
   }
   .service {
-    flex: 1 1 70%;
-    padding: 25px;
+     flex: 1 1 70%;
+     padding: 25px;
   }
   .service-illustration {
-    max-width: 90%;
+     max-width: 90%;
   }
-
-  /* プロジェクトセクション */
   .project-list {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 40px;
   }
   .project {
-    width: 70%;
-    padding: 25px;
-  }
-  .project img {
-    width: 100%;
-    margin-bottom: 20px;
+     width: 70%;
+     padding: 25px;
   }
   .project h3 {
-    font-size: 1.8rem;
+     font-size: 1.8rem;
   }
   .project p {
-    font-size: 1.1rem;
-  }
-
-  /* About / Vision / AIVYL / Contact */
-  section {
-    padding: 80px 20px;
-  }
-  .skills {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
+     font-size: 1.1rem;
   }
   .vision-section .section-title {
-    font-size: 3rem;
+     font-size: 3rem;
   }
   .vision-section p {
-    font-size: 1.3rem;
+     font-size: 1.3rem;
   }
   .aivyl-meaning .card {
-    width: 85%;
-    padding: 25px;
+     width: 85%;
+     padding: 25px;
   }
   .contact {
-    width: 85%;
-    padding: 25px;
+     width: 85%;
+     padding: 25px;
   }
 }
 
-/* デスクトップ（900px 以上） */
+/* デスクトップ（901px 以上） */
 @media (min-width: 901px) {
   .service-items {
-    flex-wrap: nowrap;
+     flex-wrap: nowrap;
   }
-
   .service {
-    flex: 1 1 25%;
+     flex: 1 1 25%;
   }
-
 }
-
-
-
-
-
