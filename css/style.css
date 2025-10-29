@@ -1,0 +1,653 @@
+/* --------------------------------
+   ベース設定
+-------------------------------- */
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #ffffff;
+  background-color: #0f111a;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1em;
+}
+
+/* --------------------------------
+   ヘッダー（ナビゲーション）
+-------------------------------- */
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 960px;
+  background: transparent;
+  z-index: 100;
+  padding: 10px 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover {
+  color: #00c896;
+}
+
+/* --------------------------------
+   ヒーローセクション
+-------------------------------- */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0f111a;
+  z-index: 1;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.45);
+  z-index: -5;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 250px auto 0;
+  padding: 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #00f0ff;
+  text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+  animation: neon-flicker 3s infinite alternate;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  color: #a0ffff;
+  text-shadow: 0 0 5px #00ffff;
+  animation: glowPulse 4s infinite alternate;
+  margin-bottom: 2em;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #00f0ff;
+  color: #0f111a;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #00c896;
+}
+
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow: 0 0 5px #00f0ff, 0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00ffff, 0 0 80px #00ffff;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 2px #00b0cc, 0 0 5px #00b0cc, 0 0 10px #00b0cc, 0 0 20px #00cccc, 0 0 40px #00cccc;
+    opacity: 0.7;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow: 0 0 5px #00ffff;
+    opacity: 1;
+  }
+  50% {
+    text-shadow: 0 0 15px #00ffff;
+    opacity: 0.85;
+  }
+}
+
+/* --------------------------------
+   共通セクション設定
+-------------------------------- */
+section {
+  padding-top: 100px;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* --------------------------------
+   Services セクション
+-------------------------------- */
+.services {
+  background-color: #131523;
+  padding: 80px 20px;
+}
+
+.service-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+/* カード全体 */
+.service {
+  position: relative;
+  overflow: visible;
+  padding: 30px 20px;
+  border-radius: 12px;
+  background-color: #1c1f2f;
+  text-align: center;
+  width: calc(50% - 20px);
+  margin-top: 70px;
+}
+
+.service-image-wrapper {
+  position: relative;
+  height: 180px;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+.service-illustration {
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  transform-origin: bottom center;
+}
+
+.service:hover .service-illustration {
+  transform: scale(2.0);
+}
+
+/* Service カードのホバーカラーごとに個別定義 */
+.service.purple:hover {
+  background-color: rgba(180, 140, 255, 0.15); /* パステル紫 */
+}
+
+.service.blue:hover {
+  background-color: rgba(130, 180, 255, 0.15); /* パステル青 */
+}
+
+.service.green:hover {
+  background-color: rgba(140, 255, 180, 0.15); /* パステル緑 */
+}
+
+.service.red:hover {
+  background-color: rgba(255, 160, 160, 0.15); /* パステル赤 */
+}
+
+.service-illustration {
+  max-width: 240px;
+  transition: transform 0.4s ease;
+}
+
+.service:hover .service-illustration {
+  transform: scale(2.0);
+}
+/* --------------------------------
+   Projects セクション
+-------------------------------- */
+.projects {
+  padding: 80px 20px;
+  background-color: #0f111a;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+}
+
+.project img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1em;
+}
+
+.project h3 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.project p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* --------------------------------
+   Contact セクション
+-------------------------------- */
+.contact {
+  padding: 120px 20px 60px;
+  background-color: #1c1f2f;
+  max-width: 600px;
+  margin: 0 auto 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2d42;
+  color: #fff;
+  font-size: 1rem;
+  resize: vertical;
+  text-align: left;
+}
+
+.contact form button {
+  background-color: #00f0ff;
+  color: #0f111a;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact form button:hover {
+  background-color: #00c896;
+}
+
+/* OUR VISION セクション */
+/* OUR VISION セクション */
+.vision-section {
+  position: relative;
+  background-image: url("../img/vision-bg.jpg"); /* ← 好きな画像に変更 */
+  background-size: cover;  /* 背景画像がコンテナに合わせて伸縮 */
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 120px 20px 120px; /* 上部パディングを増やし、下部は少し余白を作成 */
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+}
+
+.vision-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* 黒い透過オーバーレイ */
+  z-index: -1;
+}
+
+.vision-inner {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.vision-section .section-title {
+  font-size: 3.5rem;  /* タイトルをさらに大きく */
+  margin-bottom: 1.2em;
+  font-weight: 700;
+}
+
+.vision-section p {
+  font-size: 1.5rem;  /* 説明文のサイズも大きく */
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.inview {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.inview.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------
+   右下コーナーブロック（スクロールで出現）
+-------------------------------- */
+#side-btn {
+  position: fixed;
+  bottom:270px;
+  right: -200px;
+  opacity: 0;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+#side-btn a {
+    width: 165px;
+    font-size: 0.875rem;
+    display: inline-block;
+    letter-spacing: 0.1rem;
+    padding: 15px 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+#side-btn a:last-of-type {
+  border-left: solid 1px #fff;
+}
+
+#side-btn a:hover {
+    opacity: 0.7;
+}
+
+/* AIVYLの意味セクション */
+.aivyl-meaning {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #131523;
+}
+
+.card {
+  background-color: #1e2130;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(50px); /* 初期状態で下にずらしておく */
+  opacity: 0; /* 最初は透明に */
+  transition: opacity 0.8s ease, transform 0.8s ease; /* 透過と位置をアニメーションで変化 */
+}
+
+.card h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.card.show {
+  opacity: 1; /* 表示時は不透明に */
+  transform: translateY(0); /* 上にスライドして表示 */
+}
+
+
+/* --------------------------------
+   Projects セクション（画像が上に大きくなるデザイン）
+-------------------------------- */
+.projects {
+  padding: 80px 20px;
+  background-color: #131523; /* 背景色をダークなトーンに */
+  text-align: center;
+  position: relative;
+}
+
+.projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* オーバーレイ */
+  z-index: -1;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* プロジェクトカード */
+.project {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  overflow: visible; /* 画像がカードからはみ出るようにする */
+  backdrop-filter: blur(10px); /* 背景をぼかす */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 画像の設定 */
+.project img {
+  width: 40%; /* 画像を小さく表示 */
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  position: relative;
+  top: 0; /* 初期状態で上に配置 */
+  transition: transform 0.4s ease-in-out;
+}
+
+/* ホバー時に画像が上に向かって2倍に拡大 */
+.project:hover img {
+  transform: scale(1.25); /* 画像を2倍に拡大 */
+  top: -50%; /* 画像を上に移動させて拡大 */
+}
+
+.project h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.project p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.project .btn {
+  display: inline-block;
+  background-color: #00f0ff;
+  color: #0f111a;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project .btn:hover {
+  background-color: #00c896;
+}
+
+.project .btn:focus {
+  outline: 3px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+footer {
+  background-color: #131523;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+footer .credit {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: #bbb;
+}
+
+footer a {
+  color: #00f0ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: #00c896;
+}
+
+/* モバイル（最大600px） */
+@media (max-width: 600px) {
+  header .nav-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  header .nav-list li {
+    margin: 10px 0;
+  }
+
+  .hero .logo {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .services h2 {
+    font-size: 2rem;
+  }
+
+  .service-items {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service {
+    flex: 1 1 100%;
+    margin-bottom: 30px;
+  }
+
+  .projects h2 {
+    font-size: 2rem;
+  }
+
+  .project {
+    max-width: 90%;
+    margin: 10px 0;
+  }
+
+  footer .credit {
+    font-size: 0.8rem;
+  }
+}
+
+/* タブレット（600px ～ 900px） */
+@media (min-width: 601px) and (max-width: 900px) {
+  .service-items {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .service {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .project {
+    max-width: 45%;
+  }
+}
+
+/* デスクトップ（900px 以上） */
+@media (min-width: 901px) {
+  .service-items {
+    flex-wrap: nowrap;
+  }
+
+  .service {
+    flex: 1 1 25%;
+  }
+}

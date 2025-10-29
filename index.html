@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Innovation in the fashion industry" />
+  <title>AIVYL</title>
+  <link rel="icon" href="" />
+  <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- ナビゲーション -->
+  <header class="header">
+    <nav class="nav">
+      <ul class="nav-list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#vision">Vision</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ヒーローセクション -->
+  <header class="hero">
+    <video autoplay muted loop playsinline class="hero-video">
+      <source src="videos/main.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-content">
+      <h1 class="logo">AIVYL</h1>
+      <p>Pioneering the Future of Intelligent Robotics</p>
+      <a href="#services" class="btn">Explore Our Vision</a>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <h2>Our Technology</h2>
+    <div class="service-items">
+
+      <!-- サービス 1 -->
+      <div class="service purple">
+        <div class="service-image-wrapper">
+          <img src="img/image1.png" alt="AI Integration" class="service-illustration" />
+        </div>
+        <h3>AI Integration</h3>
+        <p>自律制御や意思決定に対応した独自開発AIの統合システムを提供します。</p>
+      </div>
+
+      <!-- サービス 2 -->
+      <div class="service blue">
+        <div class="service-image-wrapper">
+          <img src="img/image2.png" alt="Robotics Design" class="service-illustration" />
+        </div>
+        <h3>Robotics Design</h3>
+        <p>柔軟性と耐久性を兼ね備えたロボティクスハードウェアの設計と製造。</p>
+      </div>
+
+      <!-- サービス 3 -->
+      <div class="service green">
+        <div class="service-image-wrapper">
+          <img src="img/image3.png" alt="Automation Solutions" class="service-illustration" />
+        </div>
+        <h3>Automation Solutions</h3>
+        <p>生産・物流現場の効率を最大化するスマートオートメーションソリューション。</p>
+      </div>
+
+      <!-- サービス 4 -->
+      <div class="service red">
+        <div class="service-image-wrapper">
+          <img src="img/image4.png" alt="Sensor Technology" class="service-illustration" />
+        </div>
+        <h3>Sensor Technology</h3>
+        <p>高度なセンサー技術により正確な環境認識を実現します。</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Vision Section -->
+  <section id="vision" class="vision-section inview">
+    <div class="vision-inner">
+      <h2 class="section-title">OUR VISION</h2>
+      <p>
+        私たち AIVYL は、人とロボットが共に未来を築く社会を目指しています。<br>
+        テクノロジーが人を支え、可能性を広げる世界へ。
+      </p>
+    </div>
+  </section>
+
+  <!-- AIVYL 意味 -->
+<!-- AIVYL 意味 -->
+<section class="aivyl-meaning">
+  <div class="aivyl-card">
+    <h2>What is AIVYL?</h2>
+    <p class="fade-in-text">
+      <strong>AIVYL は、</strong><br />
+      <strong>AI（人工知能）</strong>を通じて、<br />
+      <strong>Vital（活力）</strong>を生み出し、<br />
+      <strong>Yield（成果）</strong>を収穫し、<br />
+      <strong>Lift（成長・向上）</strong>を<br />
+      続けるブランドを意味します。<br />
+      私たちは、AI技術によって活力と成果をもたらし、<br />
+      常に成長し続ける未来を創造します。
+    </p>
+  </div>
+</section>
+
+
+
+
+  <!-- Projects -->
+<!-- Projects -->
+<section id="projects" class="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <img src="img/image5.png" alt="Autonomous Service Bot" class="project-image" />
+    <h3>Autonomous Service Bot</h3>
+    <p>商業施設で活躍する感情認識型サービスロボットの実証実験。</p>
+    <a href="#" class="btn">Learn More</a>
+  </div>
+</section>
+
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <form action="mailto:contact@cognaut.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message"></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- サイドボタン -->
+  <div id="side-btn">
+    <a href="#">Chat</a>
+    <a href="#">FAQ</a>
+  </div>
+
+  <!-- フッター -->
+  <footer>
+    <p>&copy; 2025 Cognaut Inc. All rights reserved.</p>
+    <p class="credit">Illustrations by <a href="https://storyset.com" target="_blank">Storyset</a></p>
+  </footer>
+
+  <!-- スクリプト -->
+  <script src="js/jquery.inview.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
