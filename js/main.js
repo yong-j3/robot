@@ -73,19 +73,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-// ハンバーガーメニュー開閉
-document.addEventListener("DOMContentLoaded", function () {
-  const toggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav");
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
-
-  // メニュー項目をクリックしたら閉じる
-  document.querySelectorAll(".nav-list a").forEach(link => {
-    link.addEventListener("click", () => {
-      nav.classList.remove("active");
-    });
-  });
-});
