@@ -640,10 +640,6 @@ footer a:hover {
    モバイル（最大600px）
 ============================== */
 @media (max-width: 600px) {
-  /* ナビを非表示にする */
-  .nav-list {
-    display: none;
-  }
 
   /* ヒーロー */
   .hero-content {
@@ -809,6 +805,7 @@ footer a:hover {
   }
 
 }
+
 
 
 
