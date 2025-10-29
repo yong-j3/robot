@@ -261,6 +261,8 @@ section {
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  margin: 0 auto;
+  text-align: center;
   width: 100%;
   position: relative;
   overflow: visible;
@@ -278,6 +280,7 @@ section {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 20px;
+  margin: 0 auto;
   transition: transform 0.4s ease-in-out;
 }
 
@@ -636,6 +639,10 @@ footer a:hover { color: #00c896; }
   .contact {
      width: 85%;
      padding: 25px;
+  }
+
+  .project-image {
+    width: 85%;
   }
 }
 
