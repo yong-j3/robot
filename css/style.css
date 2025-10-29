@@ -625,34 +625,173 @@ footer a:hover {
   }
 }
 
-/* タブレット（600px ～ 900px） */
+/* ==============================
+   モバイル（最大600px）
+============================== */
+@media (max-width: 600px) {
+  /* ヘッダー */
+  .nav-list {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .nav-list a {
+    font-size: 1rem;
+  }
+
+  /* ヒーロー */
+  .hero-content {
+    margin: 150px auto 0;
+    padding: 15px;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+
+  /* サービスセクション */
+  .service-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .service {
+    width: 95%;
+    padding: 20px;
+  }
+  .service-illustration {
+    max-width: 80%;
+  }
+
+  /* プロジェクトセクション */
+  .project-list {
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+  }
+  .project {
+    width: 95%;
+    padding: 20px;
+  }
+  .project img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .project h3 {
+    font-size: 1.6rem;
+  }
+  .project p {
+    font-size: 1rem;
+  }
+
+  /* About / Vision / AIVYL / Contact */
+  section {
+    padding: 60px 15px;
+  }
+  .skills {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .vision-section .section-title {
+    font-size: 2.5rem;
+  }
+  .vision-section p {
+    font-size: 1.2rem;
+  }
+  .aivyl-meaning .card {
+    width: 95%;
+    padding: 20px;
+  }
+  .contact {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+/* ==============================
+   タブレット（601px ～ 900px）
+============================== */
 @media (min-width: 601px) and (max-width: 900px) {
+  /* ヘッダー */
+  .nav-list {
+    flex-wrap: wrap;
+    gap: 15px 25px;
+  }
+
+  /* ヒーロー */
+  .hero-content {
+    margin: 180px auto 0;
+    padding: 20px;
+  }
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+
+  /* サービスセクション */
   .service-items {
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 30px;
   }
-
   .service {
-    flex: 1 1 calc(50% - 20px);
+    flex: 1 1 70%;
+    padding: 25px;
+  }
+  .service-illustration {
+    max-width: 90%;
   }
 
+  /* プロジェクトセクション */
+  .project-list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+  }
   .project {
-    max-width: 70%;
+    width: 70%;
+    padding: 25px;
   }
-}
-/* スマホ（最大600px） */
-@media (max-width: 600px) {
   .project img {
-    width: 90%; /* 画像を大きく表示 */
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .project h3 {
+    font-size: 1.8rem;
+  }
+  .project p {
+    font-size: 1.1rem;
+  }
+
+  /* About / Vision / AIVYL / Contact */
+  section {
+    padding: 80px 20px;
+  }
+  .skills {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  .vision-section .section-title {
+    font-size: 3rem;
+  }
+  .vision-section p {
+    font-size: 1.3rem;
+  }
+  .aivyl-meaning .card {
+    width: 85%;
+    padding: 25px;
+  }
+  .contact {
+    width: 85%;
+    padding: 25px;
   }
 }
 
-/* タブレット（601px ～ 900px） */
-@media (min-width: 601px) and (max-width: 900px) {
-  .project img {
-    width: 70%; /* 少し大きめ */
-  }
-}
 /* デスクトップ（900px 以上） */
 @media (min-width: 901px) {
   .service-items {
@@ -664,4 +803,5 @@ footer a:hover {
   }
 
 }
+
 
