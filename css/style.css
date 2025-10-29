@@ -559,6 +559,7 @@ footer a:hover { color: #00c896; }
      width: 95%;
      max-width: 400px;
      padding: 20px;
+     text-align: center;
   }
   .project img {
      width: 100%;
@@ -617,8 +618,9 @@ footer a:hover { color: #00c896; }
      gap: 40px;
   }
   .project {
-     width: 70%;
+     width: 90%;
      padding: 25px;
+     text-align: center;
   }
   .project h3 {
      font-size: 1.8rem;
