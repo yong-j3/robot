@@ -272,14 +272,14 @@ section {
 
 .project img {
   max-width: 240px; /* サービスと同じ */
-  height: 100%;
+  height: auto;
   object-fit: contain;
   transition: transform 0.4s ease;
   transform-origin: bottom center; /* ← 下を基準に拡大 */
 }
 
 .project:hover img {
-  transform: scale(2); /* サービスと同じ倍率 */
+  transform: scale(1.25); /* サービスと同じ倍率 */
 }
 
 .project h3 {
