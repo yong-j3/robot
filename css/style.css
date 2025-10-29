@@ -629,63 +629,56 @@ footer a:hover {
    モバイル（最大600px）
 ============================== */
 @media (max-width: 600px) {
-  /* ヘッダー */
+  /* ナビを非表示にする */
   .nav-list {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .nav-list a {
-    font-size: 1rem;
+    display: none;
   }
 
   /* ヒーロー */
   .hero-content {
-    margin: 150px auto 0;
+    margin: 120px auto 0;
     padding: 15px;
   }
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   .hero-content p {
-    font-size: 1.2rem;
-  }
-
-  /* サービスセクション */
-  .service-items {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  .service {
-    width: 95%;
-    padding: 20px;
-  }
-  .service-illustration {
-    max-width: 80%;
+    font-size: 1.1rem;
   }
 
   /* プロジェクトセクション */
   .project-list {
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
     align-items: center;
   }
   .project {
     width: 95%;
+    max-width: 400px;
     padding: 20px;
+    margin: 0 auto;
   }
   .project img {
     width: 100%;
     margin-bottom: 15px;
   }
   .project h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
   .project p {
     font-size: 1rem;
   }
 
-  /* About / Vision / AIVYL / Contact */
+  /* サービス・About・Vision・AIVYL・Contactも調整 */
+  .service-items {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .service {
+    width: 95%;
+    padding: 20px;
+  }
   section {
     padding: 60px 15px;
   }
@@ -702,10 +695,12 @@ footer a:hover {
   .aivyl-meaning .card {
     width: 95%;
     padding: 20px;
+    margin: 0 auto;
   }
   .contact {
     width: 95%;
     padding: 20px;
+    margin: 0 auto;
   }
 }
 
@@ -803,5 +798,6 @@ footer a:hover {
   }
 
 }
+
 
 
