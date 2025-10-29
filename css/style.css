@@ -592,67 +592,77 @@ footer a:hover { color: #00c896; }
 /* タブレット（601px ～ 900px） */
 @media (min-width: 601px) and (max-width: 900px) {
   .hero-content {
-     margin: 180px auto 0;
-     padding: 20px;
+    margin: 180px auto 0;
+    padding: 20px;
   }
+
   .hero-content h1 {
-     font-size: 3.5rem;
+    font-size: 3.5rem;
   }
+
   .hero-content p {
-     font-size: 1.4rem;
+    font-size: 1.4rem;
   }
+
+  /* --- Services --- */
   .service-items {
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
   }
+
   .service {
-     flex: 1 1 70%;
-     padding: 25px;
+    flex: 1 1 45%;
+    padding: 25px;
+    max-width: 400px;
   }
+
   .service-illustration {
-     max-width: 90%;
+    max-width: 85%;
   }
+
+  /* --- Projects --- */
   .project-list {
-     flex-direction: row;
-     flex-wrap: wrap;
-     justify-content: center;
-     gap: 40px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
   }
+
   .project {
-     width: 90%;
-     padding: 25px;
-     max-width: 600px;
-     text-align: center;
-  }
-  .project h3 {
-     font-size: 1.8rem;
-  }
-  .project p {
-     font-size: 1.1rem;
-  }
-  .vision-section .section-title {
-     font-size: 3rem;
-  }
-  .vision-section p {
-     font-size: 1.3rem;
-  }
-  .aivyl-meaning .card {
-     width: 85%;
-     padding: 25px;
-  }
-  .contact {
-     width: 85%;
-     padding: 25px;
+    width: 45%;
+    max-width: 480px;
+    padding: 25px;
+    margin: 0 auto;
   }
 
   .project img {
-    width: 80%;
+    width: 90%;
     max-width: 600px;
-    margin: 0 auto;
     display: block;
+    margin: 0 auto;
+  }
+
+  /* --- Vision / Aivyl / Contact --- */
+  .vision-section .section-title {
+    font-size: 3rem;
+  }
+
+  .vision-section p {
+    font-size: 1.3rem;
+  }
+
+  .aivyl-meaning .card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .contact {
+    width: 85%;
+    padding: 30px;
   }
 }
+
 
 /* デスクトップ（901px 以上） */
 @media (min-width: 901px) {
