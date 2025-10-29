@@ -280,6 +280,7 @@ section {
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 20px;
+  padding-bottom: 10px;
   margin: 0 auto;
   transition: transform 0.4s ease-in-out;
 }
@@ -561,7 +562,8 @@ footer a:hover { color: #00c896; }
      padding: 20px;
      text-align: center;
   }
-    .project img {
+  .project img {
+    padding-bottom: 10px;
     width: 80%;
     max-width: 600px;
     margin: 0 auto;
@@ -637,6 +639,7 @@ footer a:hover { color: #00c896; }
   }
 
   .project img {
+    padding-bottom: 10px;
     width: 90%;
     max-width: 600px;
     display: block;
