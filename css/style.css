@@ -561,9 +561,11 @@ footer a:hover { color: #00c896; }
      padding: 20px;
      text-align: center;
   }
-  .project img {
-     width: 100%;
-     margin-bottom: 15px;
+    .project img {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
   }
   .project h3 {
      font-size: 1.5rem
@@ -645,6 +647,12 @@ footer a:hover { color: #00c896; }
 
   .project-image {
     width: 100%;
+  }
+    .project img {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
   }
 }
 
