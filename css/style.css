@@ -67,63 +67,6 @@ p {
 }
 
 /* ==============================
-   ハンバーガーメニュー
-============================== */
-.hamburger {
-  display: none;
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  width: 30px;
-  height: 24px;
-  flex-direction: column;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 200;
-}
-
-.hamburger span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background-color: #00f0ff;
-  border-radius: 2px;
-  transition: all 0.4s ease;
-}
-
-/* ハンバーガー開閉アニメーション */
-.hamburger.active span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-/* モバイル用ナビ */
-.nav-list.mobile {
-  display: none;
-  position: absolute;
-  top: 60px;
-  right: 10px;
-  background-color: rgba(15, 17, 26, 0.95);
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
-}
-
-.nav-list.mobile.show {
-  display: flex;
-}
-
-/* ==============================
    ヒーローセクション
 ============================== */
 .hero {
@@ -223,14 +166,488 @@ p {
 }
 
 /* ==============================
-   メディアクエリ（ハンバーガー発動）
+   共通セクション設定
 ============================== */
-@media (max-width: 768px) {
-  .nav-list {
-    display: none;
+section {
+  padding-top: 100px;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+/* ==============================
+   Services セクション
+============================== */
+.services {
+  background-color: #131523;
+  padding: 80px 20px;
+}
+
+.service-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.service {
+  position: relative;
+  overflow: visible;
+  padding: 30px 20px;
+  border-radius: 12px;
+  background-color: #1c1f2f;
+  text-align: center;
+  width: calc(50% - 20px);
+  margin-top: 70px;
+  transition: background-color 0.3s;
+}
+
+.service-image-wrapper {
+  position: relative;
+  height: 180px;
+  overflow: visible;
+  margin-bottom: 20px;
+}
+
+.service-illustration {
+  max-width: 240px;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  transform-origin: bottom center;
+}
+
+.service:hover .service-illustration {
+  transform: scale(2.0);
+}
+
+.service.purple:hover { background-color: rgba(180, 140, 255, 0.15); }
+.service.blue:hover   { background-color: rgba(130, 180, 255, 0.15); }
+.service.green:hover  { background-color: rgba(140, 255, 180, 0.15); }
+.service.red:hover    { background-color: rgba(255, 160, 160, 0.15); }
+
+/* ==============================
+   Projects セクション
+============================== */
+.projects {
+  padding: 80px 20px;
+  background-color: #131523;
+  text-align: center;
+  position: relative;
+}
+
+.projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  position: relative;
+  overflow: visible;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.project img {
+  width: 40%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.project:hover img {
+  transform: scale(1.25);
+  top: -50%;
+}
+
+.project h3 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.project p {
+  color: #ccc;
+  font-size: 1rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.project .btn {
+  display: inline-block;
+  background-color: #00f0ff;
+  color: #0f111a;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.project .btn:hover { background-color: #00c896; }
+.project .btn:focus {
+  outline: 3px solid #00f0ff;
+  box-shadow: 0 0 10px #00f0ff;
+}
+
+/* ==============================
+   Contact セクション
+============================== */
+.contact {
+  padding: 120px 20px 60px;
+  background-color: #1c1f2f;
+  max-width: 600px;
+  margin: 0 auto 80px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.contact form input,
+.contact form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #2a2d42;
+  color: #fff;
+  font-size: 1rem;
+  resize: vertical;
+  text-align: left;
+}
+
+.contact form button {
+  background-color: #00f0ff;
+  color: #0f111a;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact form button:hover {
+  background-color: #00c896;
+}
+
+/* ==============================
+   Vision セクション
+============================== */
+.vision-section {
+  position: relative;
+  background-image: url("../img/vision-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 120px 20px;
+  color: #ffffff;
+  text-align: center;
+  z-index: 1;
+}
+
+.vision-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.vision-inner {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.vision-section .section-title {
+  font-size: 3.5rem;
+  margin-bottom: 1.2em;
+  font-weight: 700;
+}
+
+.vision-section p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   AIVYL セクション
+============================== */
+.aivyl-meaning {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  background-color: #131523;
+}
+
+.card {
+  background-color: #1e2130;
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(50px);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card h2 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.card p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #fff;
+}
+
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==============================
+   右下コーナーブロック
+============================== */
+#side-btn {
+  position: fixed;
+  bottom: 270px;
+  right: -200px;
+  opacity: 0;
+  transform: rotate(-90deg);
+  transform-origin: top right;
+  transition: all 0.5s ease;
+  z-index: 9999;
+}
+
+#side-btn a {
+  width: 165px;
+  font-size: 0.875rem;
+  display: inline-block;
+  letter-spacing: 0.1rem;
+  padding: 15px 0;
+  color: #fff;
+  text-decoration: none;
+}
+
+#side-btn a:last-of-type {
+  border-left: solid 1px #fff;
+}
+
+#side-btn a:hover { opacity: 0.7; }
+
+/* ==============================
+   Footer
+============================== */
+footer {
+  background-color: #131523;
+  color: #ffffff;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+footer p {
+  margin: 0;
+}
+
+footer .credit {
+  font-size: 0.9rem;
+  margin-top: 15px;
+  color: #bbb;
+}
+
+footer a {
+  color: #00f0ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover { color: #00c896; }
+
+/* ==============================
+   メディアクエリ
+============================== */
+/* モバイル（最大600px） */
+@media (max-width: 600px) {
+ .nav-list {
+    display: flex;
+    flex-direction: row;      /* 横並び */
+    justify-content: center;  /* 中央寄せ */
+    gap: 15px;
+    overflow-x: auto;         /* 幅が狭い場合は横スクロール可能に */
+    -webkit-overflow-scrolling: touch; /* スマホでスムーズスクロール */
   }
 
-  .hamburger {
-    display: flex;
+  .nav-list li {
+    display: inline-block;   /* liを横並びに固定 */
+    flex: none;              /* 幅を固定 */
+  }
+
+  .nav-list a {
+    padding: 5px 10px;
+    white-space: nowrap;     /* 改行させない */
+  }
+  .hero-content {
+     margin: 120px auto 0;
+     padding: 15px;
+  }
+  .hero-content h1 {
+     font-size: 2.2rem;
+  }
+  .hero-content p {
+     font-size: 1.1rem;
+  }
+  .service-items {
+     flex-direction: column;
+     align-items: center;
+     gap: 25px;
+  }
+  .service {
+     width: 95%;
+     padding: 20px;
+     margin-bottom: 30px;
+  }
+  section {
+     padding: 60px 15px;
+  }
+  .project {
+     width: 95%;
+     max-width: 400px;
+     padding: 20px;
+  }
+  .project img {
+     width: 100%;
+     margin-bottom: 15px;
+  }
+  .project h3 {
+     font-size: 1.5rem
+     ;
+  }
+  .project p {
+     font-size: 1rem;
+  }
+  .vision-section .section-title {
+     font-size: 2.5rem;
+  }
+  .vision-section p {
+     font-size: 1.2rem;
+  }
+  .aivyl-meaning .card {
+     width: 95%;
+     padding: 20px;
+  }
+  .contact {
+     width: 95%;
+     padding: 20px; }
+}
+
+/* タブレット（601px ～ 900px） */
+@media (min-width: 601px) and (max-width: 900px) {
+  .hero-content {
+     margin: 180px auto 0;
+     padding: 20px;
+  }
+  .hero-content h1 {
+     font-size: 3.5rem;
+  }
+  .hero-content p {
+     font-size: 1.4rem;
+  }
+  .service-items {
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 30px;
+  }
+  .service {
+     flex: 1 1 70%;
+     padding: 25px;
+  }
+  .service-illustration {
+     max-width: 90%;
+  }
+  .project-list {
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 40px;
+  }
+  .project {
+     width: 70%;
+     padding: 25px;
+  }
+  .project h3 {
+     font-size: 1.8rem;
+  }
+  .project p {
+     font-size: 1.1rem;
+  }
+  .vision-section .section-title {
+     font-size: 3rem;
+  }
+  .vision-section p {
+     font-size: 1.3rem;
+  }
+  .aivyl-meaning .card {
+     width: 85%;
+     padding: 25px;
+  }
+  .contact {
+     width: 85%;
+     padding: 25px;
   }
 }
+
+/* デスクトップ（901px 以上） */
+@media (min-width: 901px) {
+  .service-items {
+     flex-wrap: nowrap;
+  }
+  .service {
+     flex: 1 1 25%;
+  }
+}
+
+
+
