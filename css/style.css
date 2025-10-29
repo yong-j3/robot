@@ -511,18 +511,23 @@ footer a:hover { color: #00c896; }
 ============================== */
 /* モバイル（最大600px） */
 @media (max-width: 600px) {
-  .nav-list { 
-     flex-direction: row;
-     justify-content: center;
-     flex-wrap: nowrap;
-     gap: 15px;
-     font-size: 0.5rem;
+ .nav-list {
+    display: flex;
+    flex-direction: row;      /* 横並び */
+    justify-content: center;  /* 中央寄せ */
+    gap: 15px;
+    overflow-x: auto;         /* 幅が狭い場合は横スクロール可能に */
+    -webkit-overflow-scrolling: touch; /* スマホでスムーズスクロール */
   }
-   .nav-list li {
-      flex: 0 0 auto;
-   }
-  .nav-list a { 
-     padding: 5px 8px;
+
+  .nav-list li {
+    display: inline-block;   /* liを横並びに固定 */
+    flex: none;              /* 幅を固定 */
+  }
+
+  .nav-list a {
+    padding: 5px 10px;
+    white-space: nowrap;     /* 改行させない */
   }
   .hero-content {
      margin: 120px auto 0;
@@ -643,5 +648,6 @@ footer a:hover { color: #00c896; }
      flex: 1 1 25%;
   }
 }
+
 
 
