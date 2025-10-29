@@ -287,7 +287,8 @@ section {
 
 .project:hover img {
   transform: scale(1.25);
-  top: -75%;
+  top: -50%;
+  transform-origin: center top;
 }
 
 .project h3 {
